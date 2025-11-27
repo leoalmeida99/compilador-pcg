@@ -1,0 +1,4 @@
+function square(x) = x * x
+function add(a,b) = a + b
+
+result = add(square(3), 4)
