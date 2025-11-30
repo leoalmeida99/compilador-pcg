@@ -26,18 +26,13 @@ Um compilador de forma visual:
 ## Sobre a linguagem AGLLMV
 Em todo compilador precisamos de uma linguagem de programação para realizar o processo de compilação, sabendo disso o grupo resolveu criar uma linguagem, ela foi batizado com o nome de “Linguagem AGLLMV”, que são as iniciais dos integrantes (Amanda, Gustavo, Leonardo, Lucas, Marcelo e Vinicius) de forma ordenada alfabeticamente. O foco da linguagem vai ser o uso de expressões matemáticas.
 
-A linguagem AGLLMV é capaz de:
-* Declarar variáveis (apenas tipos inteiros)
-* Utilizar/reconhecer/analisar/traduzir expressões matemáticas
-* Utilizar operadores aritméticos
-* Ter escopo matemático simples
-
-## Funcionalidades:
-- Declaração de funções: `function name(param1, param2) = expression`
+## Funcionalidades da linguagem AGLLMV:
+- Declarar variáveis (inteiros e floats) e funções: `function name(param1, param2) = expression`
 - Atribuições: `x = expression`
 - Chamadas de função: `f(1, 2)`
-- Operadores: `+ - * / ^`
-- Números inteiros e ponto flutuante
+- Utilizar/reconhecer/analisar/traduzir expressões matemáticas
+- Utilizar números inteiros e ponto flutuante
+- Utilizar operadores aritméticos: `+ - * / ^`
 
 ## Arquivos principais:
 - `src/lexer.py` — analisador léxico
@@ -46,23 +41,23 @@ A linguagem AGLLMV é capaz de:
 - `src/codegen.py` — compilador para bytecode simples
 - `src/vm.py` — máquina virtual para executar bytecode
 
-Exemplo de uso:
-```bash
-python run_example.py
-```
-
 ## Requisitos para rodar o mini compilador:
 - Python 3.8 ou superior (recomendado: 3.10+)
 - Nenhuma dependência externa além da biblioteca padrão do Python
 
 ## Como executar o compilador
 
-1) Executar a suíte principal de testes:
+1) Exemplo de uso da linguagem e compilador:
+```bash
+python run_example.py
+```
+
+2) Executar a suíte principal de testes:
 ```
 python tests_run.py
 ```
 
-2) Executar os testes específicos para floats:
+3) Executar os testes específicos para floats:
 ```
 python tests_floats.py
 ```
