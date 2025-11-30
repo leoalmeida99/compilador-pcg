@@ -1,5 +1,9 @@
 import sys, traceback
-sys.path.insert(0, r'c:\Users\lucas\Desktop\projeto compiladores')
+from pathlib import Path
+# Make imports work regardless of working directory or machine by adding
+# the project root (directory containing this test file) to `sys.path`.
+PROJECT_ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(PROJECT_ROOT))
 from src.lexer import tokenize
 from src.parser import Parser
 from src.semantic import SemanticAnalyzer
@@ -55,7 +59,7 @@ print(ast_to_str(prog))
 
 # Test 3: Function parsing and assignment (example)
 print('\n--- Parser test (functions and assignment) ---')
-with open('examples/example.pcg','r',encoding='utf-8') as f:
+with open(PROJECT_ROOT / 'examples' / 'example.pcg','r',encoding='utf-8') as f:
     ex = f.read()
 print('Source:\n', ex)
 parser = Parser(ex)

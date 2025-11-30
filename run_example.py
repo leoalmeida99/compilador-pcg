@@ -1,10 +1,16 @@
+import sys
+from pathlib import Path
+# ensure imports work regardless of working directory
+PROJECT_ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
 from src.lexer import tokenize
 from src.parser import Parser
 from src.semantic import SemanticAnalyzer
 from src.codegen import Compiler
 from src.vm import VM
 
-with open('examples/example.pcg', 'r', encoding='utf-8') as f:
+with open(PROJECT_ROOT / 'examples' / 'example.pcg', 'r', encoding='utf-8') as f:
     code = f.read()
 
 print('Source:\n', code)

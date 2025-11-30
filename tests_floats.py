@@ -1,5 +1,8 @@
 import sys
-sys.path.insert(0, r'c:\Users\lucas\Desktop\projeto compiladores')
+from pathlib import Path
+# Ensure imports work regardless of current working directory or machine.
+PROJECT_ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(PROJECT_ROOT))
 from src.parser import Parser
 from src.semantic import SemanticAnalyzer
 from src.codegen import Compiler
